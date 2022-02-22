@@ -25,26 +25,6 @@ public class EmployeesController {
         return 0;
     }
 
-    public static short updatePaymentMethod(DataManager data, String cpf, short paymentMethod){
-        cpf = validateAndFormatCpf(cpf);
-        Employee selected = findEmployeeByCpf(data, cpf);
-        String selectedPaymentMethod;
-        if (paymentMethod >=1 && paymentMethod <=3){
-            selectedPaymentMethod = data.paymentMethods.get(paymentMethod);
-        }
-        else{
-            return 2;
-        }
-
-        if (selected != null){
-            selected.setPaymentMethod(selectedPaymentMethod);
-        }
-        else{
-            return 1;
-        }
-        return 0;
-    }
-
     public static short updateEmployee(DataManager data, String cpf,String newCpf, String name, String address,
     short paymentMethod,double monetaryBase, double commission, short haveSyndicate, double tax){
         cpf = validateAndFormatCpf(cpf);

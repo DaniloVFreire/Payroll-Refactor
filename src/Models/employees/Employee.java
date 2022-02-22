@@ -19,10 +19,6 @@ public abstract class Employee implements Serializable {
     private PaymentSchedule paymentSchedule;
 
     public Employee(String _name, String _address, String _cpf,
-                    PaymentSchedule _paymentSchedule, String _paymentMethod){
-        this(_name, _address, _cpf,_paymentSchedule, _paymentMethod, null);
-    }
-    public Employee(String _name, String _address, String _cpf,
                     PaymentSchedule _paymentSchedule,String _paymentMethod,
                     Syndicate _syndicate){
         this.id = UUID.randomUUID();
@@ -38,24 +34,11 @@ public abstract class Employee implements Serializable {
     public Syndicate getSyndicate() {
         return syndicate;
     }
-
-    public String getPaymentMethod() {
-        return paymentMethod;
-    }
-    public PaymentSchedule getPaymentSchedule() {
-        return paymentSchedule;
-    }
     public String getCpf() {
         return cpf;
     }
     public String getName() {
         return name;
-    }
-    public String getAddress() {
-        return address;
-    }
-    public UUID getId() {
-        return id;
     }
 
     public double getCalculatedSalary() {

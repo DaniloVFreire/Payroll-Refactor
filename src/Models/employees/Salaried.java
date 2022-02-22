@@ -19,10 +19,6 @@ public class Salaried extends Employee {
         this.salary = salary;
     }
 
-    public void salaryDefinition(double _salary){
-        this.salary = _salary;
-    }
-
     public void pay(){
         System.out.println("The employee " + this.getName() +" has been payed in: R$" + salary);
     }
