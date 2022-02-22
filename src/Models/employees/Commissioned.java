@@ -20,9 +20,7 @@ public class Commissioned extends Salaried {
     public Commissioned(String _name, String _address, String _cpf,
                         PaymentSchedule _paymentSchedule ,String _paymentMethod,
                         double _salary, double _commissionTax){
-
-        super(_name, _address, _cpf, _paymentSchedule,_paymentMethod, _salary);
-        this.commissionTax = _commissionTax;
+        this(_name, _address, _cpf, _paymentSchedule, _paymentMethod, _salary, _commissionTax, null);
     }
 
     public void setCommissionTax(double commissionTax) {

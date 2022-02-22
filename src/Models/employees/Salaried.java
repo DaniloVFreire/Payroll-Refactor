@@ -7,8 +7,7 @@ public class Salaried extends Employee {
     private double salary;
 
     public Salaried(String _name, String _address, String _cpf, PaymentSchedule _paymentSchedule ,String _paymentMethod, double _salary){
-        super(_name, _address, _cpf, _paymentSchedule, _paymentMethod);
-        salary = _salary;
+        this(_name, _address, _cpf, _paymentSchedule, _paymentMethod,_salary, null);
     }
 
     public Salaried(String _name, String _address, String _cpf, PaymentSchedule _paymentSchedule ,String _paymentMethod, double _salary, Syndicate _syndicate){

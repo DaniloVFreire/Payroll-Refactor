@@ -20,14 +20,7 @@ public abstract class Employee implements Serializable {
 
     public Employee(String _name, String _address, String _cpf,
                     PaymentSchedule _paymentSchedule, String _paymentMethod){
-        this.id = UUID.randomUUID();
-        this.name = _name;
-        this.address = _address;
-        this.cpf = _cpf;
-        this.paymentSchedule = _paymentSchedule;
-        this.syndicate = null;
-        this.paymentMethod = _paymentMethod;
-        calculatedSalary = 0;
+        this(_name, _address, _cpf,_paymentSchedule, _paymentMethod, null);
     }
     public Employee(String _name, String _address, String _cpf,
                     PaymentSchedule _paymentSchedule,String _paymentMethod,

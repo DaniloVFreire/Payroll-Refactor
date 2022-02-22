@@ -16,7 +16,7 @@ public class DataManager implements Serializable {
     public ArrayList<String> paymentMethods;
     public ArrayList<PaymentSchedule> paymentSchedules;
 
-    public DataManager(){
+    public DataManager() {
         this.paymentMethods = new ArrayList<>();
         this.paymentMethods.add("the check by post");
         this.paymentMethods.add("the check in hands");
@@ -28,8 +28,8 @@ public class DataManager implements Serializable {
         this.paymentSchedules.add(new PaymentSchedule(2, 5));
 
         this.employees = new ArrayList<>();
-        this.employees.add(new Hourly("Horista", "endereco", "1", paymentSchedules.get(0),paymentMethods.get(0), 8.5, new Syndicate(1.6)));
-        this.employees.add(new Salaried("Assalariado", "endereco", "2", paymentSchedules.get(0),paymentMethods.get(0), 1060));
-        this.employees.add(new Commissioned("Comissioned", "endereco", "3" , paymentSchedules.get(0),paymentMethods.get(0), 1060, 0.03));
+        this.employees.add(new Hourly("Horista", "endereco", "1", paymentSchedules.get(0), paymentMethods.get(0), 8.5, new Syndicate(1.6)));
+        this.employees.add(new Salaried("Assalariado", "endereco", "2", paymentSchedules.get(0), paymentMethods.get(0), 1060));
+        this.employees.add(new Commissioned("Comissioned", "endereco", "3", paymentSchedules.get(0), paymentMethods.get(0), 1060, 0.03));
     }
 }

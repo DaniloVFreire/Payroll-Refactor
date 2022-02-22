@@ -14,9 +14,7 @@ public class Hourly extends Employee {
     public Hourly(String _name, String _address, String _cpf,
                   PaymentSchedule _paymentSchedule, String _paymentMethod, double _hourCost){
 
-        super(_name, _address, _cpf,
-                _paymentSchedule, _paymentMethod);
-        this.hourCost = _hourCost;
+        this(_name, _address, _cpf, _paymentSchedule, _paymentMethod, _hourCost, null);
     }
     public Hourly(String _name, String _address, String _cpf,
                   PaymentSchedule _paymentSchedule,String _paymentMethod, double _hourCost

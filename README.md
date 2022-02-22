@@ -1,4 +1,4 @@
-# Payroll P2 project
+# Payroll-Refactor P2 project
 [![Badge](https://img.shields.io/static/v1?label=License&message=MIT&color=green&style=for-the-badge&logo=GITHUB)](https://github.com/DaniloVFreire/Payroll)
 [![Badge](https://img.shields.io/static/v1?label=State&message=Inprogress&color=yellow&style=for-the-badge&logo=GITHUB)](https://github.com/DaniloVFreire/Payroll/blob/main/LICENSE)
 ## table of contents
@@ -6,13 +6,12 @@
 
 1. [Introduction](#introduction)
 2. [Project functionalities](#project-functionalities)
-3. [UML Diagram](#uml-diagram)
+3. [Refactoring process](#refactoring-process)
 
 ## Introduction
 
-The **payroll system** project is being developed in the **Java** language
-and **Intellij IDEA**, the project objective is to **apply the
-concepts of OOP** (Object-Oriented Programming) learned in
+This is the second part of **payroll system**, this project objective is to **apply the
+concepts of project patterns and code smells** learned in
 the programming 2 discipline.
 
 ## Project functionalities
@@ -34,7 +33,13 @@ a corporate payroll system** that includes:
 |    10    |  Create a new payment Schedule |:white_check_mark:
 ---
 
-## UML Diagram
-
-![UML Diagram](UML%20Diagram.png)
+## Refactoring process
+### Code Smells
+1. **Code duplication** Code repetition in **constructors of employee's**;
+2. **Large Class** all "toString" methods and "dataManager" constructor are doing more than it should
+3. **Expeculative generality** creation of unused classes and methods
+### Solutions
+1. Fixed with **Chain constructors** in [commit]();
+2. Fixed with **Stract method** in [commit]();
+3. Fixed with **Remove Generative Speculation** in [commit]();
 
