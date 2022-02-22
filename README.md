@@ -30,7 +30,7 @@ a corporate payroll system** that includes:
 |     7    |  Run today's payroll           |:white_large_square:
 |     8    |  Undo/Redo                     |:white_check_mark:
 |     9    |  Schedule payment              |:white_check_mark:
-|    10    |  Create a new payment Schedule |:white_check_mark:
+|    10    |  Create a new payment Schedule |:white_large_square:
 ---
 
 ## Refactoring process
