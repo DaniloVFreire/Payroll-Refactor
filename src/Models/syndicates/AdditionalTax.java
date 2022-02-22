@@ -33,11 +33,12 @@ public class AdditionalTax implements Serializable {
         return date;
     }
 
+    private String appendString() {
+        return "\n\t\tAdditionalServiceTax{" + "value=" + value + ", date=" + date + '}';
+    }
+
     @Override
     public String toString() {
-        return "\n\t\tAdditionalServiceTax{" +
-                "value=" + value +
-                ", date=" + date +
-                '}';
+        return appendString();
     }
 }

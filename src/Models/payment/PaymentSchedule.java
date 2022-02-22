@@ -32,21 +32,7 @@ public class PaymentSchedule implements Serializable {
     public int getFrequency() {
         return frequency;
     }
-
-    public void setDay(int day) {
-        this.day = day;
-    }
-
-    public void setFrequency(int frequency) {
-        this.frequency = frequency;
-    }
-
-    public void setWeekDay(int weekDay) {
-        this.weekDay = weekDay;
-    }
-
-    @Override
-    public String toString() {
+    private String typeOfSchedule(){
         String typeString = "";
         if (day!=-1) {
             if (day == 0) {
@@ -60,8 +46,16 @@ public class PaymentSchedule implements Serializable {
                     ", week day payment=" + DayOfWeek.of(weekDay);
 
         }
-        return "PaymentSchedule{" +
-                "type=" + typeString +
-                '}';
+        return typeString;
+    }
+    private String appendString(){
+        return "PaymentSchedule{" + "type=" + typeOfSchedule() + '}';
+    }
+
+    @Override
+    public String toString() {
+        return appendString();
     }
 }
+
+

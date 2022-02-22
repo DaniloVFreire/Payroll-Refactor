@@ -18,18 +18,30 @@ public class DataManager implements Serializable {
 
     public DataManager() {
         this.paymentMethods = new ArrayList<>();
+        populatePaymentMethodOptions();
+
+        this.paymentSchedules = new ArrayList<>();
+        populatePaymentschedulesOptions();
+
+        this.employees = new ArrayList<>();
+        populateInicialEmployees();
+    }
+    private void populatePaymentMethodOptions(){
         this.paymentMethods.add("the check by post");
         this.paymentMethods.add("the check in hands");
         this.paymentMethods.add("bank account deposit");
-
-        this.paymentSchedules = new ArrayList<>();
+    }
+    private void populatePaymentschedulesOptions(){
         this.paymentSchedules.add(new PaymentSchedule(1, 5));
         this.paymentSchedules.add(new PaymentSchedule(0));
         this.paymentSchedules.add(new PaymentSchedule(2, 5));
-
-        this.employees = new ArrayList<>();
-        this.employees.add(new Hourly("Horista", "endereco", "1", paymentSchedules.get(0), paymentMethods.get(0), 8.5, new Syndicate(1.6)));
-        this.employees.add(new Salaried("Assalariado", "endereco", "2", paymentSchedules.get(0), paymentMethods.get(0), 1060));
-        this.employees.add(new Commissioned("Comissioned", "endereco", "3", paymentSchedules.get(0), paymentMethods.get(0), 1060, 0.03));
+    }
+    private void populateInicialEmployees(){
+        this.employees.add(new Hourly("Horista", "endereco", "1", paymentSchedules.get(0),
+                paymentMethods.get(0), 8.5, new Syndicate(1.6)));
+        this.employees.add(new Salaried("Assalariado", "endereco", "2", paymentSchedules.get(0),
+                paymentMethods.get(0), 1060));
+        this.employees.add(new Commissioned("Comissioned", "endereco", "3", paymentSchedules.get(0),
+                paymentMethods.get(0), 1060, 0.03));
     }
 }

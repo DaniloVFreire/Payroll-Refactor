@@ -33,8 +33,5 @@ public class Commissioned extends Salaried {
     public void postSalesResult(double saleValue){
         salesResult.add(new SaleResult(saleValue));
     }
-    @Override
-    public String toString(){
-        return super.getName()+ " " + super.getAddress() + " " +super.getCpf();
-    }
+
 }

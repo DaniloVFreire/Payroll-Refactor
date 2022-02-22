@@ -54,9 +54,4 @@ public class Hourly extends Employee {
     public void pay(){
         System.out.println("The employee " + this.getName() +" has been payed");
     }
-
-    @Override
-    public String toString(){
-        return super.getName()+ " " + super.getAddress() + " " +super.getCpf();
-    }
 }

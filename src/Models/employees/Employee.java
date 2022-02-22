@@ -95,9 +95,13 @@ public abstract class Employee implements Serializable {
         this.paymentSchedule = paymentSchedule;
     }
 
+    public String appendString(){
+        return " < "+this.name+ " " + this.address + " " +this.cpf+ " > ";
+    }
+
     @Override
     public String toString(){
-        return this.name + this.address + this.cpf;
+        return appendString();
     }
 
     public abstract void pay();
