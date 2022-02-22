@@ -44,6 +44,6 @@ a corporate payroll system** that includes:
 1. Fixed with **Chain constructors** in [commit](https://github.com/DaniloVFreire/Payroll-Refactor/commit/c1109fb38b292a21cee3a6b971d8f1c5a0ca4c2e);
 2. Fixed with **Extract method** in [commit](https://github.com/DaniloVFreire/Payroll-Refactor/commit/d8a01a4da61b0a87ccd326d8b0af9921ccacda38); 
 3. Fixed with **Extract method** in [commit](https://github.com/DaniloVFreire/Payroll-Refactor/commit/d8a01a4da61b0a87ccd326d8b0af9921ccacda38);
-4. Fixed with **Remove Generative Speculation** in [commit]();
+4. Fixed with **Remove Generative Speculation** in [commit](https://github.com/DaniloVFreire/Payroll-Refactor/commit/e153517df7599a26f84b6e12fe986a972c271f9d);
 5. Fixed with the implementation of **command** in [commit]();
 
