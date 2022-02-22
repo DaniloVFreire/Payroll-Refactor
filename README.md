@@ -39,7 +39,7 @@ a corporate payroll system** that includes:
 2. **Large Class** all "toString" methods and "dataManager" constructor are doing more than it should
 3. **Expeculative generality** creation of unused classes and methods
 ### Solutions
-1. Fixed with **Chain constructors** in [commit]();
+1. Fixed with **Chain constructors** in [commit](https://github.com/DaniloVFreire/Payroll-Refactor/commit/c1109fb38b292a21cee3a6b971d8f1c5a0ca4c2e);
 2. Fixed with **Stract method** in [commit]();
 3. Fixed with **Remove Generative Speculation** in [commit]();
 
