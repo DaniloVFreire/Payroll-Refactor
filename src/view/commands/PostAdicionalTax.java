@@ -2,16 +2,17 @@ package view.commands;
 
 import data.DataManager;
 
-import java.util.Scanner;
+import java.util.Stack;
 
 import static controller.EmployeesController.postServiceTax;
 
-public class PostAdicionalTax extends DataScan{
-    public PostAdicionalTax(DataManager _data, Scanner _scanner){
-        super(_data, _scanner);
+public class PostAdicionalTax extends Scanner {
+    public PostAdicionalTax(java.util.Scanner _scanner, Stack<String> _undo, Stack<String> _redo){
+        super(_scanner, _undo, _redo);
     }
     @Override
-    public void execute() {
+    public DataManager execute(DataManager data) {
+        pushUndo(undo, data);
         System.out.println("enter the employee cpf");
         String input = scanner.next();
 
@@ -25,5 +26,6 @@ public class PostAdicionalTax extends DataScan{
         } else {
             System.out.println("Service tax successfully posted");
         }
+        return data;
     }
 }

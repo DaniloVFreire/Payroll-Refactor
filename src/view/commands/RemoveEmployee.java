@@ -2,16 +2,17 @@ package view.commands;
 
 import data.DataManager;
 
-import java.util.Scanner;
+import java.util.Stack;
 
 import static controller.EmployeesController.deleteEmployee;
 
-public class RemoveEmployee extends DataScan{
-    public RemoveEmployee(DataManager _data, Scanner _scanner){
-        super(_data, _scanner);
+public class RemoveEmployee extends Scanner {
+    public RemoveEmployee(java.util.Scanner _scanner, Stack<String> _undo, Stack<String> _redo){
+        super(_scanner, _undo, _redo);
     }
     @Override
-    public void execute() {
+    public DataManager execute(DataManager data) {
+        pushUndo(undo, data);
         System.out.println("Enter the employee cpf:");
         String input = scanner.next();
 
@@ -20,5 +21,6 @@ public class RemoveEmployee extends DataScan{
         } else {
             System.out.println("Deletion Successfully executed");
         }
+        return data;
     }
 }

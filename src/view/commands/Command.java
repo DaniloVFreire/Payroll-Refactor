@@ -1,5 +1,7 @@
 package view.commands;
 
+import data.DataManager;
+
 public interface Command {
-    public void execute();
+    public DataManager execute(DataManager data);
 }

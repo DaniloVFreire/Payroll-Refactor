@@ -2,18 +2,19 @@ package view.commands;
 
 import data.DataManager;
 
-import java.util.Scanner;
+import java.util.Stack;
 
 import static controller.EmployeesController.createEmployee;
 
-public class AddEmployee extends DataScan{
+public class AddEmployee extends Scanner {
 
-    public AddEmployee(DataManager _data, Scanner _scanner){
-        super(_data, _scanner);
+    public AddEmployee(java.util.Scanner _scanner, Stack<String> _undo, Stack<String> _redo){
+        super(_scanner, _undo, _redo);
     }
-    @Override
-    public void execute(){
 
+    @Override
+    public DataManager execute(DataManager data){
+        pushUndo(undo, data);
         System.out.println("Enter the employee's name");
         String name = scanner.next();
 
@@ -71,5 +72,6 @@ public class AddEmployee extends DataScan{
             case 3 -> System.out.println("The employee's payment method does not exist");
             default -> System.out.println("Employee successfully added");
         }
+        return data;
     };
 }

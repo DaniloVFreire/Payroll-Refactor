@@ -2,19 +2,21 @@ package view.commands;
 
 import data.DataManager;
 
-import java.util.Scanner;
+import java.util.Stack;
 
 import static controller.PaymentController.payroll;
 
-public class RunPayroll extends DataScan{
-    public RunPayroll(DataManager _data, Scanner _scanner){
-        super(_data, _scanner);
+public class RunPayroll extends Scanner {
+    public RunPayroll(java.util.Scanner _scanner, Stack<String> _undo, Stack<String> _redo){
+        super(_scanner, _undo, _redo);
     }
     @Override
-    public void execute() {
+    public DataManager execute(DataManager data) {
+        pushUndo(undo, data);
         System.out.println("Enter a date" +
                 "Obs: (date format YYYY-MM-D)");
         String input = scanner.next();
         payroll(data, input);
+        return data;
     }
 }

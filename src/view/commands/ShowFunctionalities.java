@@ -1,8 +1,10 @@
 package view.commands;
 
+import data.DataManager;
+
 public class ShowFunctionalities implements Command{
     @Override
-    public void execute(){
+    public DataManager execute(DataManager data){
         System.out.print("""
                 Functionalities
                 0 To see the options
@@ -20,6 +22,7 @@ public class ShowFunctionalities implements Command{
                 12 To See employees data
                 13 To exit
                 """);
+        return data;
     }
 
 }

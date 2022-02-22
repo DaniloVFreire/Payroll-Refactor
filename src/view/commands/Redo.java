@@ -7,11 +7,11 @@ import java.util.Stack;
 import static controller.StateController.redo;
 
 public class Redo extends UndoRedo{
-    public Redo(DataManager _data, Stack<String> _undo, Stack<String> _redo){
-        super(_data, _undo, _redo);
+    public Redo(Stack<String> _undo, Stack<String> _redo){
+        super(_undo, _redo);
     }
     @Override
-    public void execute() {
+    public DataManager execute(DataManager data) {
         DataManager sample = redo(data, undo, redo);
         if (sample == null) {
             System.out.println("Stack is clear, you cant undo");
@@ -19,5 +19,6 @@ public class Redo extends UndoRedo{
             data = sample;
             System.out.println("Redo successfully applied");
         }
+        return data;
     }
 }

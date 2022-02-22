@@ -2,17 +2,18 @@ package view.commands;
 
 import data.DataManager;
 
-import java.util.Scanner;
+import java.util.Stack;
 
 import static controller.EmployeesController.postSalesResult;
 
-public class PostSalesResult extends DataScan{
-    public PostSalesResult(DataManager _data, Scanner _scanner){
-        super(_data, _scanner);
+public class PostSalesResult extends Scanner {
+    public PostSalesResult(java.util.Scanner _scanner, Stack<String> _undo, Stack<String> _redo){
+        super(_scanner, _undo, _redo);
     }
 
     @Override
-    public void execute() {
+    public DataManager execute(DataManager data) {
+        pushUndo(undo, data);
         System.out.println("Enter the employee cpf:");
         String input = scanner.next();
 
@@ -24,5 +25,6 @@ public class PostSalesResult extends DataScan{
             case 2 -> System.out.println("The select Employee is not an Commissioned");
             default -> System.out.println("Sales result successfully posted");
         }
+        return data;
     }
 }

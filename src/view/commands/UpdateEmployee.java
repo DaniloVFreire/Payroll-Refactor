@@ -6,18 +6,19 @@ import Models.employees.Hourly;
 import Models.employees.Salaried;
 import data.DataManager;
 
-import java.util.Scanner;
+import java.util.Stack;
 
 import static controller.EmployeesController.findEmployeeByCpf;
 import static controller.EmployeesController.updateEmployee;
 
-public class UpdateEmployee extends DataScan{
-    public UpdateEmployee(DataManager _data, Scanner _scanner){
-        super(_data, _scanner);
+public class UpdateEmployee extends Scanner {
+    public UpdateEmployee(java.util.Scanner _scanner, Stack<String> _undo, Stack<String> _redo){
+        super(_scanner, _undo, _redo);
     }
 
     @Override
-    public void execute() {
+    public DataManager execute(DataManager data) {
+        pushUndo(undo, data);
         short paymentMethod;
         String input, cpf, name, address;
         int intInput;
@@ -163,6 +164,7 @@ public class UpdateEmployee extends DataScan{
         } else {
             System.out.println("Employee successfully updated");
         }
+        return data;
     }
 
 }

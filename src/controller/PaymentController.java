@@ -12,8 +12,8 @@ import static java.lang.Integer.parseInt;
 public class PaymentController {
 
     public static void payroll(DataManager data, String date){
-        LocalDate date1 = LocalDate.parse(date);
-
+//        LocalDate date1 = LocalDate.parse(date);
+        System.out.println("Funcionalidade indisponível");
     }
     public static short addPaymentSchedule(DataManager data, String input){
         String [] inputArray;

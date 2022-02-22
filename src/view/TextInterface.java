@@ -24,22 +24,22 @@ public class TextInterface {
 
         ArrayList<Command> commands = new ArrayList<>();
         commands.add(new ShowFunctionalities());
-        commands.add(new AddEmployee(data, scanner));
-        commands.add(new RemoveEmployee(data, scanner));
-        commands.add(new PostTimeCard(data, scanner));
-        commands.add(new PostSalesResult(data, scanner));
-        commands.add(new PostAdicionalTax(data, scanner));
-        commands.add(new UpdateEmployee(data, scanner));
-        commands.add(new RunPayroll(data, scanner));
-        commands.add(new Undo(data, undo, redo));
-        commands.add(new Redo(data, undo, redo));
-        commands.add(new ChangePaymentSchedule(data, scanner));
-        commands.add(new CreateNewPaymentSchedule(data, scanner));
-        commands.add(new ListEmployees(data));
+        commands.add(new AddEmployee(scanner, undo, redo));
+        commands.add(new RemoveEmployee(scanner, undo, redo));
+        commands.add(new PostTimeCard(scanner, undo, redo));
+        commands.add(new PostSalesResult(scanner, undo, redo));
+        commands.add(new PostAdicionalTax(scanner, undo, redo));
+        commands.add(new UpdateEmployee(scanner, undo, redo));
+        commands.add(new RunPayroll(scanner, undo, redo));
+        commands.add(new Undo(undo, redo));
+        commands.add(new Redo(undo, redo));
+        commands.add(new ChangePaymentSchedule(scanner, undo, redo));
+        commands.add(new CreateNewPaymentSchedule(scanner, undo, redo));
+        commands.add(new ListEmployees());
 
         welcome();
-        commands.get(0).execute();
-
+        commands.get(0).execute(data);
+        DataManager newData;
         short commandIndex;
         boolean on = true;
         while(on){
@@ -48,7 +48,7 @@ public class TextInterface {
                 if ((commandIndex >= 1) && (commandIndex <= 7) || (commandIndex >= 10) && (commandIndex <= 11)) {
                     undo.push(storeState(data));
                 }
-                commands.get(commandIndex).execute();
+                data = commands.get(commandIndex).execute(data);
             }
             else if(commandIndex == 13){
                 on = false;
@@ -58,12 +58,6 @@ public class TextInterface {
                 System.out.println("That option does not exists, to show all possible options type 0");
             }
         }
-
-        DataManager example;
-
-
-        Employee selectedEmployee = null;
-
     }
 
     public static void welcome() {
